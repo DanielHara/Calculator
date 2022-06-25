@@ -18,8 +18,27 @@ function App() {
     }
 
     if (value === '=') {
+      if (operation === '+') {
+        setCurrent(String(Number(current) + Number(previous)))
+        return
+      }
+      
+      if (operation === '-') {
+        setCurrent(String(Number(previous) - Number(current)))
+        return;
+      }
 
-      return
+      if (operation === '*') {
+        setCurrent(String(Number(current) * Number(previous)))
+        return;
+      }
+
+      if (operation === '/') {
+        setCurrent(String(Number(previous) / Number(current)))
+        return;
+      }
+
+      return;
     }
 
     if (value === 'DEL') {
