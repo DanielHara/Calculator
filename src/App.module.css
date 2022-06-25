@@ -41,8 +41,7 @@
   margin-bottom: 10px;
   background-color: hsl(268, 71%, 12%);
   border-radius: 5px;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding: 10px;
 }
 
 .key {
