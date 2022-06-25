@@ -28,24 +28,10 @@ function App() {
     }
 
 
-    if (value === '+') {
-
-      return
-    }
-    
-    
-    if (value === '-') {
-
-      return
-    }
-
-    if (value === 'x') {
-
-      return
-    }
-
-
-    if (value === '/') {
+    if (value === '+' || value === '-' || value === 'x' || value === '/') {
+      setOperation(value);
+      setPrevious(current);
+      setCurrent('0');
 
       return
     }
