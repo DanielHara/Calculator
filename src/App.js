@@ -26,7 +26,7 @@ const calculate = (operation, current, previous)  => {
 function App() {
   const [previous, setPrevious] = useState(null);
   const [current, setCurrent] = useState('0');
-  const [operation, setOperation] = useState('');
+  const [operation, setOperation] = useState(null);
 
   const handleClickKey = ({ target }) => {
     const { attributes }  = target;
@@ -34,7 +34,9 @@ function App() {
     const value = attributes['data-button'].value;
 
     if (value === 'RESET') {
-
+      setCurrent('0');
+      setOperation(null);
+      setPrevious(null);
       return
     }
 
@@ -45,10 +47,9 @@ function App() {
     }
 
     if (value === 'DEL') {
-
+      setCurrent(current.length > 1 ? current.slice(0, current.length - 1) : '0')
       return
     }
-
 
     if (value === '+' || value === '-' || value === 'x' || value === '/') {
       if (previous !== null) {
@@ -62,8 +63,6 @@ function App() {
 
       return;
     }
-
-    // else 
 
     if (current === '0') {
       setCurrent(value)
