@@ -2,8 +2,29 @@ import clsx from 'clsx';
 import { useState } from 'react';
 import styles from './App.module.css';
 
+const calculate = (operation, current, previous)  => {
+  if (operation === '+') {
+    return String(Number(current) + Number(previous))
+  }
+
+  if (operation === '-') {
+    return String(Number(previous) - Number(current));
+  }
+
+  if (operation === 'x') {
+    return String(Number(current) * Number(previous));
+  }
+
+  if (operation === '/') {
+    return String(Number(previous) / Number(current));
+  }
+
+  return current;
+}
+
+
 function App() {
-  const [previous, setPrevious] = useState('0');
+  const [previous, setPrevious] = useState(null);
   const [current, setCurrent] = useState('0');
   const [operation, setOperation] = useState('');
 
@@ -18,26 +39,8 @@ function App() {
     }
 
     if (value === '=') {
-      if (operation === '+') {
-        setCurrent(String(Number(current) + Number(previous)))
-        return
-      }
-      
-      if (operation === '-') {
-        setCurrent(String(Number(previous) - Number(current)))
-        return;
-      }
-
-      if (operation === '*') {
-        setCurrent(String(Number(current) * Number(previous)))
-        return;
-      }
-
-      if (operation === '/') {
-        setCurrent(String(Number(previous) / Number(current)))
-        return;
-      }
-
+      setCurrent(calculate(operation, current, previous));
+      setPrevious(null);
       return;
     }
 
@@ -48,11 +51,16 @@ function App() {
 
 
     if (value === '+' || value === '-' || value === 'x' || value === '/') {
-      setOperation(value);
-      setPrevious(current);
-      setCurrent('0');
+      if (previous !== null) {
+        setCurrent(calculate(value, current, previous));
+        setPrevious(null);
+      } else {
+        setOperation(value);
+        setPrevious(current);
+        setCurrent('0');
+      }
 
-      return
+      return;
     }
 
     // else 
