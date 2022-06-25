@@ -1,5 +1,8 @@
 * {
   box-sizing: border-box;
+  font-family: "League Spartan";
+  font-size: 32px;
+  font-weight: 700;
 }
 
 .App {
@@ -16,7 +19,6 @@
 }
 
 .screen {
-  font-size: 32px;
   background-color: hsl(268, 71%, 12%);
   padding: 20px 10px;
   text-align: right;
@@ -24,15 +26,6 @@
   border-radius: 5px;
   margin-top: 10px;
   margin-bottom: 10px;
-}
-
-.keypad {
-  margin-top: 10px;
-  margin-bottom: 10px;
-  background-color: hsl(268, 71%, 12%);
-  border-radius: 5px;
-  padding-top: 10px;
-  padding-bottom: 10px;
 }
 
 .row {
@@ -44,6 +37,12 @@
   width: 100%;
   display: grid;
   grid-template-columns: 25% 25% 25% 25%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  background-color: hsl(268, 71%, 12%);
+  border-radius: 5px;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 .key {
@@ -56,7 +55,6 @@
   box-shadow: 0px 2px hsl(28, 16%, 65%);
 
   color: hsl(221, 14%, 31%);
-  font-size: 32px;
 }
 
 .largeKey {
@@ -66,9 +64,11 @@
 .blueButton {
   background-color: hsl(225, 21%, 49%);
   box-shadow: 0px 2px hsl(224, 28%, 35%);
+  color: white;
 }
 
 .redButton {
   background-color: hsl(6, 63%, 50%);
   box-shadow: 0px 2px hsl(6, 70%, 34%);
+  color: white;
 }

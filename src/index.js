@@ -7,6 +7,8 @@ import reportWebVitals from './reportWebVitals';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=League+Spartan" />
     <App />
   </React.StrictMode>
 );
