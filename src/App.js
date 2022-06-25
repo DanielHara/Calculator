@@ -1,10 +1,11 @@
+import clsx from 'clsx';
 import styles from './App.module.css';
 
 function App() {
   return (
     <div className={styles.App}>
       <div className={styles.calculator}>
-        <h2>
+        <h2 className={styles.title}>
           calc
         </h2>
 
@@ -13,8 +14,7 @@ function App() {
         </div>
 
 
-        <div className={styles.keypad}>
-          <div className={styles.row}>
+        <div className={styles.grid}>
             <button className={styles.key}>
               7
             </button>
@@ -24,12 +24,11 @@ function App() {
             <button className={styles.key}>
               9
             </button>
-            <button className={styles.key}>
+            <button className={clsx(styles.key, styles.blueButton)}>
               DEL
             </button>
-          </div>
 
-          <div className={styles.row}>
+
             <button className={styles.key}>
               4
             </button>
@@ -42,9 +41,8 @@ function App() {
             <button className={styles.key}>
               +
             </button>
-          </div>
 
-          <div className={styles.row}>
+
             <button className={styles.key}>
               1  
             </button>
@@ -57,9 +55,9 @@ function App() {
             <button className={styles.key}>
               -
             </button>
-          </div>
 
-          <div className={styles.row}>
+
+
             <button className={styles.key}>
               .
             </button>
@@ -72,16 +70,13 @@ function App() {
             <button className={styles.key}>
               x
             </button>
-          </div>
 
-          <div className={styles.row}>
-            <button className={styles.key}>
+            <button className={clsx(styles.key, styles.largeKey, styles.blueButton)}>
               RESET
             </button>
-            <button className={styles.key}>
+            <button className={clsx(styles.key, styles.largeKey, styles.redButton)}>
               =
             </button>
-          </div>
         </div>
       </div>
     </div>
