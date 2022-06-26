@@ -1,6 +1,6 @@
 import clsx from 'clsx';
 import { useState } from 'react';
-import styles from './App.module.css';
+import styles from './App.module.scss';
 
 const calculate = (operation, current, previous)  => {
   if (operation === '+') {

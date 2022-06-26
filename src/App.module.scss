@@ -54,6 +54,11 @@
   box-shadow: 0px 2px hsl(28, 16%, 65%);
 
   color: hsl(221, 14%, 31%);
+
+  &:hover {
+    background-color: hsl(30, 25%, 95%);
+    cursor: pointer;
+  }
 }
 
 .largeKey {
@@ -64,10 +69,18 @@
   background-color: hsl(225, 21%, 49%);
   box-shadow: 0px 2px hsl(224, 28%, 35%);
   color: white;
+
+  &:hover {
+    background-color: hsl(225, 21%, 69%);
+  }
 }
 
 .redButton {
   background-color: hsl(6, 63%, 50%);
   box-shadow: 0px 2px hsl(6, 70%, 34%);
   color: white;
+
+  &:hover {
+    background-color: hsl(6, 63%, 80%);
+  }
 }
